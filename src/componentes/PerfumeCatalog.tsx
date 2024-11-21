@@ -11,7 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 // Datos para los perfumes
 const perfumes = [
-    { id: 1, name: "212-Men", brand: "Giorgio Armani", gender: "hombre", price: 80, image: "/imagenes/212-men-hombres.jpg?height=900&width=1600" },
+    { id: 1, name: "212-Men", brand: "Giorgio Armani", gender: "hombre", price: 80, image: "/imagenes/212-men-hombres.jpg" },
     { id: 2, name: "212-Vip Black", brand: "Giorgio Armani", gender: "hombre", price: 85, image: "/imagenes/212-vip Black-hombres.jpg" },
     { id: 3, name: "212-Vip Men Club", brand: "Giorgio Armani" ,gender: "hombre", price: 90, image: "/imagenes/212-vipNighClub-hombres.jpg" },
     { id: 4, name: "Acqua Di Gio", brand: "Giorgio Armani",gender: "hombre", price: 100, image: "/imagenes/Acquadi-men-hombres.jpg" },
@@ -112,7 +112,7 @@ export default function PerfumeCatalog() {
                 alt={`Imagen de ${perfume.name}`}
                 width={200}
                 height={200}
-                className="w-full h-100 object-cover rounded-t-lg"
+                className="w-full h-50 object-cover rounded-t-lg"
               />
             </CardHeader>
             <CardContent>
