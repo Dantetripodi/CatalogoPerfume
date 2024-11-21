@@ -110,8 +110,8 @@ export default function PerfumeCatalog() {
               <Image
                 src={perfume.image}
                 alt={`Imagen de ${perfume.name}`}
-                width={900}
-                height={1600}
+                width={200}
+                height={200}
                 className="w-full h-100 object-cover rounded-t-lg"
               />
             </CardHeader>
