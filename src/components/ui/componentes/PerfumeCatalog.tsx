@@ -26,7 +26,7 @@ const perfumes = [
     { id: 13, name: "Good Girl", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Good-Girl-women-mujeres.jpg" },
     { id: 14, name: "Halloween women", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Halloween-women-mujeres.jpg" },
     { id: 15, name: "Hugo Boss Just Diferent", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/HugoBoss-hombres.jpg" },
-    { id: 16, name: " L'Interdit", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/L-interdit-women-mujeres.jpg" },
+    { id: 16, name: "L'Interdit", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/L-interdit-women-mujeres.jpg" },
     { id: 17, name: "La Vida Es Bella", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/LaVidaEsBella-women-mujeres.jpg" },
     { id: 18, name: "My Way", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/My-way-women-mujeres.jpg" },
     { id: 19, name: "Nina Ricci", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/NinaRicci-women-mujeres.jpg" },
