@@ -1,11 +1,9 @@
-
-import PerfumeCatalog from "../components/ui/componentes/PerfumeCatalog";
-
+import PerfumeCatalog from "../componentes/PerfumeCatalog";
 
 export default function Home() {
   return (
     <>
-      <PerfumeCatalog></PerfumeCatalog>      
+      <PerfumeCatalog />
     </>
   );
 }
