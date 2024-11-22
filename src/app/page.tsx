@@ -1,5 +1,5 @@
 
-import PerfumeCatalog from "../componentes/PerfumeCatalog";
+import PerfumeCatalog from "../components/ui/componentes/PerfumeCatalog";
 
 
 export default function Home() {
