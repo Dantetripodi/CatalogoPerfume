@@ -11,31 +11,31 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 // Datos para los perfumes
 const perfumes = [
-    { id: 1, name: "212-Men", brand: "Giorgio Armani", gender: "hombre", price: 80, image: "/imagenes/212-men-hombres.jpg" },
-    { id: 2, name: "212-Vip Black", brand: "Giorgio Armani", gender: "hombre", price: 85, image: "/imagenes/212-vip Black-hombres.jpg" },
-    { id: 3, name: "212-Vip Men Club", brand: "Giorgio Armani" ,gender: "hombre", price: 90, image: "/imagenes/212-vipNighClub-hombres.jpg" },
-    { id: 4, name: "Acqua Di Gio", brand: "Giorgio Armani",gender: "hombre", price: 100, image: "/imagenes/Acquadi-men-hombres.jpg" },
-    { id: 5, name: "Amor Amor Cacharel", brand: "Giorgio Armani",gender: "mujer", price: 95, image: "/imagenes/AmorAmor-women-mujeres.jpg" },
-    { id: 6, name: "Armani Code", brand: "Giorgio Armani",gender: "hombre", price: 110, image: "/imagenes/ArmaniCode-hombres.jpg" },
-    { id: 7, name: "Bad Boy Cobalt", brand: "Giorgio Armani",gender: "hombre", price: 120, image: "/imagenes/badboy-Covalt-hombres.jpg" },
-    { id: 8, name: "Bad Boy", brand: "Giorgio Armani",gender: "hombre", price: 130, image: "/imagenes/badboy-hombres.jpg" },
+    { id: 1, name: "212-Men", brand: "Giorgio Armani", gender: "hombre", price: 30000, image: "/imagenes/212-men-hombres.jpg" },
+    { id: 2, name: "212-Vip Black", brand: "Giorgio Armani", gender: "hombre", price: 30000, image: "/imagenes/212-vip Black-hombres.jpg" },
+    { id: 3, name: "212-Vip Men Club", brand: "Giorgio Armani" ,gender: "hombre", price: 30000, image: "/imagenes/212-vipNighClub-hombres.jpg" },
+    { id: 4, name: "Acqua Di Gio", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Acquadi-men-hombres.jpg" },
+    { id: 5, name: "Amor Amor Cacharel", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/AmorAmor-women-mujeres.jpg" },
+    { id: 6, name: "Armani Code", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/ArmaniCode-hombres.jpg" },
+    { id: 7, name: "Bad Boy Cobalt", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/badboy-Covalt-hombres.jpg" },
+    { id: 8, name: "Bad Boy", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/badboy-hombres.jpg" },
     { id: 9, name: "Black XS L'Aphrodisiaque", brand: "Giorgio Armani",gender: "hombre", price: 140, image: "/imagenes/blackXS-afro-hombres.jpg" },
-    { id: 10, name: "CH Women", brand: "Giorgio Armani",gender: "mujer", price: 80, image: "/imagenes/Ch-women-mujeres.jpg" },
-    { id: 11, name: "Eve EDP", brand: "Giorgio Armani",gender: "hombre", price: 85, image: "/imagenes/EveParfum-hombres.jpg" },
+    { id: 10, name: "CH Women", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Ch-women-mujeres.jpg" },
+    { id: 11, name: "Eve EDP", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/EveParfum-hombres.jpg" },
     { id: 12, name: "Givenchy-Very Irresistible Sensual", brand: "Giorgio Armani",gender: "mujer", price: 90, image: "/imagenes/Givenchy-women-mujeres.jpg" },
-    { id: 13, name: "Good Girl", brand: "Giorgio Armani",gender: "mujer", price: 95, image: "/imagenes/Good-Girl-women-mujeres.jpg" },
-    { id: 14, name: "Halloween women", brand: "Giorgio Armani",gender: "mujer", price: 105, image: "/imagenes/Halloween-women-mujeres.jpg" },
-    { id: 15, name: "Hugo Boss Just Diferent", brand: "Giorgio Armani",gender: "hombre", price: 110, image: "/imagenes/HugoBoss-hombres.jpg" },
-    { id: 16, name: " ", brand: "Giorgio Armani",gender: "mujer", price: 80, image: "/imagenes/L-interdit-women-mujeres.jpg" },
-    { id: 17, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 85, image: "/imagenes/LaVidaEsBella-women-mujeres.jpg" },
-    { id: 18, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 95, image: "/imagenes/My-way-women-mujeres.jpg" },
-    { id: 19, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 105, image: "/imagenes/NinaRicci-women-mujeres.jpg" },
-    { id: 20, name: "Phantom Black Parfum", brand: "Giorgio Armani",gender: "hombre", price: 110, image: "/imagenes/Phantom-black-hombres.jpg" },
-    { id: 21, name: "Phantom", brand: "Giorgio Armani",gender: "hombre", price: 115, image: "/imagenes/Phantom-hombres.jpg" },
-    { id: 22, name: "Polo Blue EDT", brand: "Giorgio Armani",gender: "hombre", price: 120, image: "/imagenes/poloBlue-hombres.jpg" },
-    { id: 23, name: "Sauvage Dior", brand: "Giorgio Armani",gender: "hombre", price: 125, image: "/imagenes/Sauvage-men-hombres.jpg" },
-    { id: 24, name: "Scandal Pour Homme", brand: "Giorgio Armani",gender: "hombre", price: 130, image: "/imagenes/Scandal-men-hombres.jpg" },
-    { id: 25, name: "Tom Ford - Oud Wood", brand: "Giorgio Armani",gender: "hombre", price: 135, image: "/imagenes/Tomford-hombres.jpg" },
+    { id: 13, name: "Good Girl", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Good-Girl-women-mujeres.jpg" },
+    { id: 14, name: "Halloween women", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Halloween-women-mujeres.jpg" },
+    { id: 15, name: "Hugo Boss Just Diferent", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/HugoBoss-hombres.jpg" },
+    { id: 16, name: " ", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/L-interdit-women-mujeres.jpg" },
+    { id: 17, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/LaVidaEsBella-women-mujeres.jpg" },
+    { id: 18, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/My-way-women-mujeres.jpg" },
+    { id: 19, name: "212-VIP", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/NinaRicci-women-mujeres.jpg" },
+    { id: 20, name: "Phantom Black Parfum", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Phantom-black-hombres.jpg" },
+    { id: 21, name: "Phantom", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Phantom-hombres.jpg" },
+    { id: 22, name: "Polo Blue EDT", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/poloBlue-hombres.jpg" },
+    { id: 23, name: "Sauvage Dior", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Sauvage-men-hombres.jpg" },
+    { id: 24, name: "Scandal Pour Homme", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Scandal-men-hombres.jpg" },
+    { id: 25, name: "Tom Ford - Oud Wood", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Tomford-hombres.jpg" },
   ];
   
 
@@ -43,7 +43,7 @@ const perfumes = [
 export default function PerfumeCatalog() {
   const [searchTerm, setSearchTerm] = useState("")
   const [genderFilter, setGenderFilter] = useState("todos")
-  const [priceRange, setPriceRange] = useState([0, 150])
+  const [priceRange, setPriceRange] = useState([0, 30000])
 
   const filteredPerfumes = perfumes.filter((perfume) => {
     const matchesSearch = perfume.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
