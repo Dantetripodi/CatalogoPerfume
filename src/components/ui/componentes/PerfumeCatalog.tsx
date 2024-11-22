@@ -51,7 +51,10 @@ export default function PerfumeCatalog() {
     const matchesGender = genderFilter === "todos" || perfume.gender === genderFilter
     const matchesPrice = perfume.price >= priceRange[0] && perfume.price <= priceRange[1]
     return matchesSearch && matchesGender && matchesPrice
-  })
+  });
+  const handleGenderChange = (value : string) => {
+    setGenderFilter(value);
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -72,15 +75,32 @@ export default function PerfumeCatalog() {
             <RadioGroup value={genderFilter} onValueChange={setGenderFilter}>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="todos" id="todos" />
-                <Label htmlFor="todos">Todos</Label>
-              </div>
+                <button
+                  type="button"
+                  onClick={() => handleGenderChange("todos")}
+                  className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}
+                >
+                  Todos
+                </button>              </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hombre" id="hombre" />
-                <Label htmlFor="hombre">Hombre</Label>
+                <button
+                  type="button"
+                  onClick={() => handleGenderChange("hombre")}
+                  className={`px-4 py-2 rounded-md ${genderFilter === "hombre" ? "bg-primary text-white" : ""}`}
+                >
+                  Hombre
+                </button>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="mujer" id="mujer" />
-                <Label htmlFor="mujer">Mujer</Label>
+                <button
+                  type="button"
+                  onClick={() => handleGenderChange("mujer")}
+                  className={`px-4 py-2 rounded-md ${genderFilter === "mujer" ? "bg-primary text-white" : ""}`}
+                >
+                  Mujer
+                </button>
               </div>
             </RadioGroup>
           </div>
@@ -90,7 +110,7 @@ export default function PerfumeCatalog() {
             <Slider
               min={30000}
               max={50000}
-              step={10}
+              step={5}
               value={priceRange}
               onValueChange={setPriceRange}
               className="w-full"
@@ -99,7 +119,7 @@ export default function PerfumeCatalog() {
               <span>${priceRange[0]}</span>
               <span>${priceRange[1]}</span>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
       
