@@ -27,9 +27,9 @@ const perfumes = [
     { id: 14, name: "Halloween women", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/Halloween-women-mujeres.jpg" },
     { id: 15, name: "Hugo Boss Just Diferent", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/HugoBoss-hombres.jpg" },
     { id: 16, name: "L'Interdit", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/L-interdit-women-mujeres.jpg" },
-    { id: 17, name: "La  Vida Es Bella", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/LaVidaEsBella-women-mujeres.jpg" },
-    { id: 18, name: "My Way", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/My-way-women-mujeres.jpg" },
-    { id: 19, name: "Nina Ricci", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/NinaRicci-women-mujeres.jpg" },
+    { id: 17, name: "La Vida Es Bella", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/LaVidaEsBella-women-mujeres.jpg" },
+    { id: 18, name: "My way", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/My-way-women-mujeres.jpg" },
+    { id: 19, name: "NinaRicci", brand: "Giorgio Armani",gender: "mujer", price: 30000, image: "/imagenes/NinaRicci-women-mujeres.jpg" },
     { id: 20, name: "Phantom Black Parfum", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Phantom-black-hombres.jpg" },
     { id: 21, name: "Phantom", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/Phantom-hombres.jpg" },
     { id: 22, name: "Polo Blue EDT", brand: "Giorgio Armani",gender: "hombre", price: 30000, image: "/imagenes/poloBlue-hombres.jpg" },
@@ -75,30 +75,19 @@ export default function PerfumeCatalog() {
             <RadioGroup value={genderFilter} onValueChange={setGenderFilter}>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="todos" id="todos" />
-                <button
-                  type="button"
-                  onClick={() => handleGenderChange("todos")}
-                  className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}
-                >
+                <button type="button" onClick={() => handleGenderChange("todos")} className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
                   Todos
-                </button>              </div>
+                  </button>             </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hombre" id="hombre" />
-                <button
-                  type="button"
-                  onClick={() => handleGenderChange("hombre")}
-                  className={`px-4 py-2 rounded-md ${genderFilter === "hombre" ? "bg-primary text-white" : ""}`}
-                >
-                  Hombre
-                </button>
+                <button type="button"onClick={() => handleGenderChange("todos")}className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
+                Hombre
+                </button> 
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="mujer" id="mujer" />
-                <button
-                  type="button"
-                  onClick={() => handleGenderChange("mujer")}
-                  className={`px-4 py-2 rounded-md ${genderFilter === "mujer" ? "bg-primary text-white" : ""}`}
-                >
+                <button type="button"onClick={() => handleGenderChange("mujer")} className={`px-4 py-2 rounded-md ${genderFilter === "mujer" ? "bg-primary text-white" : ""}`}
+                  >
                   Mujer
                 </button>
               </div>
