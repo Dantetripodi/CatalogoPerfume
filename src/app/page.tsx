@@ -1,4 +1,4 @@
-import PerfumeCatalog from "../componentes/PerfumeCatalog";
+import PerfumeCatalog from "../components/PerfumeCatalog";
 
 export default function Home() {
   return (

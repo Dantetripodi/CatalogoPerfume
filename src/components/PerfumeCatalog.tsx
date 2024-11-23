@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/ui/input";
+import { Button } from "@/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+} from "@/ui/card";
+import { Slider } from "@/ui/slider";
+import { Label } from "@/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
 
 // Datos para los perfumes
 const perfumes = [
@@ -139,7 +139,7 @@ const perfumes = [
   },
   {
     id: 16,
-    name: " ",
+    name: "L'Interdit",
     brand: "Giorgio Armani",
     gender: "mujer",
     price: 30000,
@@ -147,7 +147,7 @@ const perfumes = [
   },
   {
     id: 17,
-    name: "212-VIP",
+    name: "La Vida Es Bella",
     brand: "Giorgio Armani",
     gender: "mujer",
     price: 30000,
@@ -155,7 +155,7 @@ const perfumes = [
   },
   {
     id: 18,
-    name: "212-VIP",
+    name: "My way",
     brand: "Giorgio Armani",
     gender: "mujer",
     price: 30000,
@@ -163,7 +163,7 @@ const perfumes = [
   },
   {
     id: 19,
-    name: "212-VIP",
+    name: "Nina Ricci",
     brand: "Giorgio Armani",
     gender: "mujer",
     price: 30000,
@@ -286,14 +286,18 @@ export default function PerfumeCatalog() {
       </div>
 
       <div
-        className="flex flex-shrink w-full h-screen"
+        className="flex flex-shrink w-full"
         style={{ gap: "10px", flexWrap: "wrap" }}
       >
         {filteredPerfumes.map((perfume) => (
           <Card
             key={perfume.id}
-            className="h-[400px] flex-1 flex flex-col"
-            style={{ flex: "1", maxWidth: "300px", minWidth: "250px" }}
+            // className="flex-1 flex flex-col"
+            style={{
+              flex: "1",
+              minWidth: "250px",
+              maxWidth: "300px",
+            }}
           >
             <CardHeader>
               <Image
