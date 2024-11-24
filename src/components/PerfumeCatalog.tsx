@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/ui/card";
 import { Slider } from "@/ui/slider";
-import { Label } from "@/ui/label";
+import { Label } from "@/ui/label"; 
 import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
 
 // Datos para los perfumes
@@ -252,26 +252,26 @@ export default function PerfumeCatalog() {
         />
 
         <div className="flex flex-wrap gap-4">
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex-1 min-w-[100px]">
             {/* <Label className="mb-2 block">Género</Label> */}
             <RadioGroup value={genderFilter} onValueChange={setGenderFilter}>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 pt-2">
                 <RadioGroupItem value="todos" id="todos" />
-                <button type="button"onClick={() => handleGenderChange("todos")}className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
+                <Button variant="outline" type="button"onClick={() => handleGenderChange("todos")}>
                 TODOS
-                </button>
+                </Button>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 pt-2">
                 <RadioGroupItem value="hombre" id="hombre" />
-                <button type="button"onClick={() => handleGenderChange("hombre")}className={`px-4 py-2 rounded-md ${genderFilter === "hombre" ? "bg-primary text-white" : ""}`}>
+                <Button variant="outline" type="button"onClick={() => handleGenderChange("hombre")}>
                 HOMBRES
-                </button>
+                </Button>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 pt-2">
                 <RadioGroupItem value="mujer" id="mujer" />
-                <button type="button"onClick={() => handleGenderChange("mujer")}className={`px-4 py-2 rounded-md ${genderFilter === "mujer" ? "bg-primary text-white" : ""}`}>
+                <Button variant="outline" type="button"onClick={() => handleGenderChange("mujer")}>
                 MUJER
-                </button>
+                </Button>
               </div>
             </RadioGroup>
           </div>
@@ -290,7 +290,11 @@ export default function PerfumeCatalog() {
               <span>${priceRange[0]}</span>
               <span>${priceRange[1]}</span>
             </div>
-          </div>
+          </div> 
+
+
+
+
         </div>
       </div>
 
@@ -325,7 +329,7 @@ export default function PerfumeCatalog() {
               </p>
             </CardContent>
             <CardFooter className="flex justify-between">
-              <span className="font-bold">${perfume.price}</span>
+              <span className="">${perfume.price}</span>
               <Button>Ver Detalles</Button>
             </CardFooter>
           </Card>
