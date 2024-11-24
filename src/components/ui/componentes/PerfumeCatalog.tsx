@@ -76,8 +76,9 @@ export default function PerfumeCatalog() {
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="todos" id="todos" />
                 <button type="button" onClick={() => handleGenderChange("todos")} className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
-                  Todos
-                  </button>             </div>
+                  Todos aaaaa
+                  </button>             
+                  </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hombre" id="hombre" />
                 <button type="button"onClick={() => handleGenderChange("todos")}className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
