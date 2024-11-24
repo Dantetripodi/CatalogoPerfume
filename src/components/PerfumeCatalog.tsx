@@ -234,10 +234,13 @@ export default function PerfumeCatalog() {
       perfume.price >= priceRange[0] && perfume.price <= priceRange[1];
     return matchesSearch && matchesGender && matchesPrice;
   });
+  const handleGenderChange = (value : string) => {
+    setGenderFilter(value);
+  };
 
   return (
-    <div className="mx-auto p-4 h-full flex flex-col">
-      <h1 className="text-3xl font-bold mb-6">Catálogo de Perfumes</h1>
+    <div className="mx-auto p-5 h-full flex flex-col">
+      <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
 
       <div className="mb-6 space-y-4">
         <Input
@@ -250,19 +253,25 @@ export default function PerfumeCatalog() {
 
         <div className="flex flex-wrap gap-4">
           <div className="flex-1 min-w-[200px]">
-            <Label className="mb-2 block">Género</Label>
+            {/* <Label className="mb-2 block">Género</Label> */}
             <RadioGroup value={genderFilter} onValueChange={setGenderFilter}>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="todos" id="todos" />
-                <Label htmlFor="todos">Todos</Label>
+                <button type="button"onClick={() => handleGenderChange("todos")}className={`px-4 py-2 rounded-md ${genderFilter === "todos" ? "bg-primary text-white" : ""}`}>
+                TODOS
+                </button>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hombre" id="hombre" />
-                <Label htmlFor="hombre">Hombre</Label>
+                <button type="button"onClick={() => handleGenderChange("hombre")}className={`px-4 py-2 rounded-md ${genderFilter === "hombre" ? "bg-primary text-white" : ""}`}>
+                HOMBRES
+                </button>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="mujer" id="mujer" />
-                <Label htmlFor="mujer">Mujer</Label>
+                <button type="button"onClick={() => handleGenderChange("mujer")}className={`px-4 py-2 rounded-md ${genderFilter === "mujer" ? "bg-primary text-white" : ""}`}>
+                MUJER
+                </button>
               </div>
             </RadioGroup>
           </div>
