@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import  Image from "next/image";
 import { Input } from "@/ui/input";
 import { Button } from "@/ui/button";
 import {
@@ -20,15 +20,16 @@ const perfumes = [
   {
     id: 1,
     name: "212-Men",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/212-men-hombres.jpg",
+    notes: "Eau de Toilette",
   },
   {
     id: 2,
     name: "212-Vip Black",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/212-vip Black-hombres.jpg",
@@ -36,7 +37,7 @@ const perfumes = [
   {
     id: 3,
     name: "212-Vip Men Club",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/212-vipNighClub-hombres.jpg",
@@ -52,7 +53,7 @@ const perfumes = [
   {
     id: 5,
     name: "Amor Amor Cacharel",
-    brand: "Giorgio Armani",
+    brand: "Jean Bousquet",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/AmorAmor-women-mujeres.jpg",
@@ -68,7 +69,7 @@ const perfumes = [
   {
     id: 7,
     name: "Bad Boy Cobalt",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/badboy-Covalt-hombres.jpg",
@@ -76,7 +77,7 @@ const perfumes = [
   {
     id: 8,
     name: "Bad Boy",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/badboy-hombres.jpg",
@@ -84,15 +85,15 @@ const perfumes = [
   {
     id: 9,
     name: "Black XS L'Aphrodisiaque",
-    brand: "Giorgio Armani",
+    brand: "Paco Rabanne ",
     gender: "hombre",
-    price: 140,
+    price:  30000,
     image: "/imagenes/blackXS-afro-hombres.jpg",
   },
   {
     id: 10,
     name: "CH Women",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/Ch-women-mujeres.jpg",
@@ -100,7 +101,7 @@ const perfumes = [
   {
     id: 11,
     name: "Eve EDP",
-    brand: "Giorgio Armani",
+    brand: "Paco Rabanne",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/EveParfum-hombres.jpg",
@@ -108,15 +109,15 @@ const perfumes = [
   {
     id: 12,
     name: "Givenchy-Very Irresistible Sensual",
-    brand: "Giorgio Armani",
+    brand: "Givenchy",
     gender: "mujer",
-    price: 90,
+    price: 30000,
     image: "/imagenes/Givenchy-women-mujeres.jpg",
   },
   {
     id: 13,
     name: "Good Girl",
-    brand: "Giorgio Armani",
+    brand: "Carolina Herrera",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/Good-Girl-women-mujeres.jpg",
@@ -124,7 +125,7 @@ const perfumes = [
   {
     id: 14,
     name: "Halloween women",
-    brand: "Giorgio Armani",
+    brand: "Jesús del Pozo",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/Halloween-women-mujeres.jpg",
@@ -132,7 +133,7 @@ const perfumes = [
   {
     id: 15,
     name: "Hugo Boss Just Diferent",
-    brand: "Giorgio Armani",
+    brand: "Hugo Boss",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/HugoBoss-hombres.jpg",
@@ -140,7 +141,7 @@ const perfumes = [
   {
     id: 16,
     name: "L'Interdit",
-    brand: "Giorgio Armani",
+    brand: "Givenchy",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/L-interdit-women-mujeres.jpg",
@@ -148,7 +149,7 @@ const perfumes = [
   {
     id: 17,
     name: "La Vida Es Bella",
-    brand: "Giorgio Armani",
+    brand: "Lancôme",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/LaVidaEsBella-women-mujeres.jpg",
@@ -164,7 +165,7 @@ const perfumes = [
   {
     id: 19,
     name: "Nina Ricci",
-    brand: "Giorgio Armani",
+    brand: "Nina Ricci",
     gender: "mujer",
     price: 30000,
     image: "/imagenes/NinaRicci-women-mujeres.jpg",
@@ -172,7 +173,7 @@ const perfumes = [
   {
     id: 20,
     name: "Phantom Black Parfum",
-    brand: "Giorgio Armani",
+    brand: "Paco Rabanne",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/Phantom-black-hombres.jpg",
@@ -180,7 +181,7 @@ const perfumes = [
   {
     id: 21,
     name: "Phantom",
-    brand: "Giorgio Armani",
+    brand: "Paco Rabanne",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/Phantom-hombres.jpg",
@@ -188,7 +189,7 @@ const perfumes = [
   {
     id: 22,
     name: "Polo Blue EDT",
-    brand: "Giorgio Armani",
+    brand: "Ralph Lauren",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/poloBlue-hombres.jpg",
@@ -196,7 +197,7 @@ const perfumes = [
   {
     id: 23,
     name: "Sauvage Dior",
-    brand: "Giorgio Armani",
+    brand: "Dior",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/Sauvage-men-hombres.jpg",
@@ -204,7 +205,7 @@ const perfumes = [
   {
     id: 24,
     name: "Scandal Pour Homme",
-    brand: "Giorgio Armani",
+    brand: "Jean Paul Gaultier",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/Scandal-men-hombres.jpg",
@@ -212,7 +213,7 @@ const perfumes = [
   {
     id: 25,
     name: "Tom Ford - Oud Wood",
-    brand: "Giorgio Armani",
+    brand: "tom ford",
     gender: "hombre",
     price: 30000,
     image: "/imagenes/Tomford-hombres.jpg",
@@ -223,6 +224,11 @@ export default function PerfumeCatalog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [genderFilter, setGenderFilter] = useState("todos");
   const [priceRange, setPriceRange] = useState([0, 30000]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const filteredPerfumes = perfumes.filter((perfume) => {
     const matchesSearch =
@@ -254,21 +260,21 @@ export default function PerfumeCatalog() {
         <div className="flex flex-wrap gap-4">
           <div className="flex-1 min-w-[100px]">
             {/* <Label className="mb-2 block">Género</Label> */}
-            <RadioGroup value={genderFilter} onValueChange={setGenderFilter}>
-              <div className="flex items-center space-x-2 pt-2">
-                <RadioGroupItem value="todos" id="todos" />
-                <Button variant="outline" type="button"onClick={() => handleGenderChange("todos")}>
+            <RadioGroup  value={genderFilter} onValueChange={setGenderFilter}>
+              <div className="flex items-center space-x-2 pt-2 ">
+                <RadioGroupItem value="todos" id="todos" className="w-6 h-6" />
+                <Button  variant="outline" type="button"onClick={() => handleGenderChange("todos")}>
                 TODOS
                 </Button>
               </div>
               <div className="flex items-center space-x-2 pt-2">
-                <RadioGroupItem value="hombre" id="hombre" />
+                <RadioGroupItem value="hombre" id="hombre" className="w-6 h-6" />
                 <Button variant="outline" type="button"onClick={() => handleGenderChange("hombre")}>
                 HOMBRES
                 </Button>
               </div>
               <div className="flex items-center space-x-2 pt-2">
-                <RadioGroupItem value="mujer" id="mujer" />
+                <RadioGroupItem value="mujer" id="mujer" className="w-6 h-6"/>
                 <Button variant="outline" type="button"onClick={() => handleGenderChange("mujer")}>
                 MUJER
                 </Button>
@@ -280,7 +286,7 @@ export default function PerfumeCatalog() {
             <Label className="mb-2 block">Rango de Precio</Label>
             <Slider
               min={0}
-              max={150}
+              max={30000}
               step={10}
               value={priceRange}
               onValueChange={setPriceRange}
@@ -322,16 +328,36 @@ export default function PerfumeCatalog() {
               />
             </CardHeader>
             <CardContent>
-              <CardTitle>{perfume.name}</CardTitle>
-              <p className="text-sm text-gray-600">{perfume.brand}</p>
-              <p className="text-sm text-gray-600 capitalize">
+              <CardTitle className="text-lg font-bold">{perfume.name}</CardTitle>
+              <p className="text-sm text-gray-600 pt-2">{perfume.brand}</p>
+              <p className="text-sm text-gray-600 capitalize pt-2">
                 {perfume.gender}
               </p>
             </CardContent>
             <CardFooter className="flex justify-between">
               <span className="">${perfume.price}</span>
-              <Button>Ver Detalles</Button>
-            </CardFooter>
+              
+              <Button
+              className="btn btn-primary"
+              onClick={openModal}>
+              Ver Detalles
+              </Button>
+              {/* MODAL */}
+                {isModalOpen && (
+                      <div className="modal-overlay fixed inset-0 bg-opacity-50 bg-opacity-50 flex items-center justify-center z-50">
+                      <div className="modal bg-white rounded-lg p-6 shadow-lg max-w-md w-full text-center">
+                        <h2>{perfume.name}</h2>
+                        <p><strong>Notas:</strong> {perfume.notes??"Sin notas"}</p>
+                        <Button
+                          className="btn btn-secondary"
+                          onClick={closeModal}
+                        >
+                        Cerrar
+                        </Button>
+                        </div>
+                      </div>
+                    )}
+          </CardFooter>
           </Card>
         ))}
       </div>
