@@ -114,7 +114,7 @@ const perfumes: Perfume[] = [
     gender: "hombre",
     price: 30000,
     image: "/imagenes/EveParfum-hombres.jpg",
-    nptes:"Las Notas Olfativas son: Mango, jazmín, vainilla y Sándalo ",
+    notes:"Las Notas Olfativas son: Mango, jazmín, vainilla y Sándalo ",
   },
   {
     id: 12,
@@ -141,7 +141,7 @@ const perfumes: Perfume[] = [
     gender: "mujer",
     price: 30000,
     image: "/imagenes/Halloween-women-mujeres.jpg",
-    notas:"Las Notas de Salida son violeta, notas marinas, hoja de plátano y petitgrain; las Notas de Corazón son violeta, magnolia, lirio de los valles, tuberosa y pimienta; las Notas de Fondo son incienso, vainilla de Madagascar, sándalo y mirra.",
+    notes:"Las Notas de Salida son violeta, notas marinas, hoja de plátano y petitgrain; las Notas de Corazón son violeta, magnolia, lirio de los valles, tuberosa y pimienta; las Notas de Fondo son incienso, vainilla de Madagascar, sándalo y mirra.",
   },
   {
     id: 15,
@@ -384,7 +384,7 @@ export default function PerfumeCatalog() {
               
               <Button
               className="btn btn-primary"
-              onClick={() => handleOpenModal(perfume)}>
+              onClick={() => handleOpenModal(Perfume)}>
               Ver Detalles
               </Button>
               {/* MODAL */}
