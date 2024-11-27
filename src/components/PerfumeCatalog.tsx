@@ -14,15 +14,12 @@ import {
 import { Slider } from "@/ui/slider";
 import { Label } from "@/ui/label"; 
 import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
-/* type Perfume = {
-  id: number;
+
+interface Perfume {
   name: string;
   brand: string;
-  gender: string;
-  price: number;
-  image: string;
   notes: string;
-}; */
+}
 
 // Datos para los perfumes
 const perfumes = [
@@ -259,14 +256,14 @@ export default function PerfumeCatalog() {
   const [genderFilter, setGenderFilter] = useState("todos");
   const [priceRange, setPriceRange] = useState([0, 30000]);
 
-  const [selectedPerfume, setSelectedPerfume] = useState(null); // Para manejar el perfume seleccionado
+  const [selectedPerfume, setSelectedPerfume] = useState<Perfume | null>(null); // Para manejar el perfume seleccionado
   const [isModalOpen, setIsModalOpen] = useState(false); // Para abrir/cerrar el popup
 
  
 
 
   // Manejar la apertura del modal
-  const handleOpenModal = (perfumes:any) => {
+  const handleOpenModal = (perfumes: Perfume) => {
     setSelectedPerfume(perfumes);
     setIsModalOpen(true);
   };
@@ -389,7 +386,7 @@ export default function PerfumeCatalog() {
               Ver Detalles
               </Button>
               {/* MODAL */}
-                {isModalOpen && (
+                {isModalOpen && selectedPerfume && (
                       <div className="modal-overlay fixed inset-0 bg-opacity-50 bg-opacity-50 flex items-center justify-center z-50">
                       <div className="modal bg-white rounded-lg p-6 shadow-lg max-w-md w-full text-center">
                         <h2 className="text-lg font-bold mb-4"><strong>{selectedPerfume.name}</strong></h2>
