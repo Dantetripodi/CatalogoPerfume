@@ -14,9 +14,18 @@ import {
 import { Slider } from "@/ui/slider";
 import { Label } from "@/ui/label"; 
 import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
+/* type Perfume = {
+  id: number;
+  name: string;
+  brand: string;
+  gender: string;
+  price: number;
+  image: string;
+  notes: string;
+}; */
 
 // Datos para los perfumes
-const perfumes: Perfume[] = [
+const perfumes = [
   {
     id: 1,
     name: "212-Men",
@@ -244,15 +253,7 @@ const perfumes: Perfume[] = [
   },
 ];
 
-type Perfume = {
-  id: number;
-  name: string;
-  brand: string;
-  gender: string;
-  price: number;
-  image: string;
-  notes: string;
-};
+
 export default function PerfumeCatalog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [genderFilter, setGenderFilter] = useState("todos");
@@ -265,7 +266,7 @@ export default function PerfumeCatalog() {
 
 
   // Manejar la apertura del modal
-  const handleOpenModal = (perfumes: Perfume[]) => {
+  const handleOpenModal = (perfumes:any) => {
     setSelectedPerfume(perfumes);
     setIsModalOpen(true);
   };
@@ -384,7 +385,7 @@ export default function PerfumeCatalog() {
               
               <Button
               className="btn btn-primary"
-              onClick={() => handleOpenModal(Perfume)}>
+              onClick={() => handleOpenModal(perfume)}>
               Ver Detalles
               </Button>
               {/* MODAL */}
