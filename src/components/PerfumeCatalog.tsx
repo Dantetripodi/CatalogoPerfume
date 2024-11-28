@@ -357,12 +357,10 @@ export default function PerfumeCatalog() {
   };
 
   return (
-    <div className="relative">
-    
-    
+    <>
     {/* CONTENIDO PRINCIPAL */}
-   <div className="container mx-auto p-20">
-    <div className="mx-auto p-5 h-full flex flex-col">
+   <div className="container  ">
+    <div className=" p-10 h-full flex flex-col">
       <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
 
       {/* BOTONES DE CONTACTO */}
@@ -509,6 +507,6 @@ export default function PerfumeCatalog() {
       )}
       </div>
     </div>
-    </div>
+    </>
   );
 }
