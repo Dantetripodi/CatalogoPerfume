@@ -359,7 +359,14 @@ export default function PerfumeCatalog() {
   return (
     <div className="relative">
     
-    <div className="absolute top-4 right-4 flex gap-4 z-50">
+    
+    {/* CONTENIDO PRINCIPAL */}
+   <div className="container mx-auto p-20">
+    <div className="mx-auto p-5 h-full flex flex-col">
+      <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
+
+      {/* BOTONES DE CONTACTO */}
+    <div className="absolute  top-4 right-4 flex flex-col gap-3 sm:gap-4 z-50">
       {/* Botón de WhatsApp */}
       <Link
         href="https://wa.me/1145630304" // Reemplaza con tu número de WhatsApp
@@ -380,10 +387,6 @@ export default function PerfumeCatalog() {
         <FaInstagram size={24} />
       </Link>
     </div>
-    
-   
-    <div className="mx-auto p-5 h-full flex flex-col">
-      <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
 
       <div className="mb-6 space-y-4">
         <Input
@@ -504,6 +507,7 @@ export default function PerfumeCatalog() {
           No se encontraron perfumes que coincidan con tu búsqueda.
         </p>
       )}
+      </div>
     </div>
     </div>
   );
