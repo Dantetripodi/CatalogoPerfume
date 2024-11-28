@@ -15,6 +15,11 @@ import { Slider } from "@/ui/slider";
 import { Label } from "@/ui/label"; 
 import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
 
+//import ContactButtons from "./ContactButtons";
+
+import Link from "next/link";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+
 interface Perfume {
   name: string;
   brand: string;
@@ -117,7 +122,7 @@ const perfumes = [
     id: 11,
     name: "Eve EDP",
     brand: "Paco Rabanne",
-    gender: "hombre",
+    gender: "mujer",
     price: 30000,
     image: "/imagenes/EveParfum-hombres.jpg",
     notes:"Las Notas Olfativas son: Mango, jazmín, vainilla y Sándalo ",
@@ -248,6 +253,69 @@ const perfumes = [
     image: "/imagenes/Tomford-hombres.jpg",
     notes:"Notas de salida: Madera de oud, palo de rosa de brasil, cardamomo. Notas medias: Pimienta de Sichuan, sandalo, vetiver,Notas de fondo: Haba Tonka, vainilla, ambar.",
   },
+  {
+    id: 26,
+    name: "212 Vip Rose",
+    brand: "Carolina Herrera",
+    gender: "mujer",
+    price: 30000,
+    image: "/imagenes/212-VipRose-mujer.jpg",
+    notes:"Las Notas de Salida son champán y notas afrutadas; la Nota de Corazón es Peach Blossom; las Notas de Fondo son almizcle blanco, notas amaderadas y ámbar.",
+  },
+  {
+    id: 27,
+    name: "Scandal Le Parfum Intense",
+    brand: "Jean Paul Gaultier",
+    gender: "Mujer",
+    price: 30000,
+    image: "/imagenes/Scandal-Le-Parfum-Intense-mujer.jpg",
+    notes:"Las Notas Olfativas son: Flor de Azahar, tuberosa y Jazmín.",
+  },
+  {
+    id: 28,
+    name: "Olimpea- Intense-mujer",
+    brand: "Paco Rabanne",
+    gender: "mujer",
+    price: 30000,
+    image: "/imagenes/Olimpea-Intense-mujer.jpg",
+    notes:"Las notas de salida son mandarina verde, jazmín de agua y flor de jengibre; las notas de corazón son vainilla y sal; las notas de fondo son ámbar gris, madera de cachemira y sándalo..",
+  },
+  {
+    id: 29,
+    name: "212-Sexy Fem",
+    brand: "Carolina Herrera",
+    gender: "mujer",
+    price: 30000,
+    image: "/imagenes/212-sexyFem-mujer.jpg",
+    notes:"Las Notas de Salida son pimienta rosa, mandarina y bergamota; las Notas de Corazón son algodón de azúcar, gardenia, flores, pelargonio y rosa; las Notas de Fondo son vainilla, almizcle, sándalo, caramelo, pachulí y violeta.",
+  },
+  {
+    id: 30,
+    name: "Miss Millionaire Fabulous",
+    brand: "Paco Rabanne",
+    gender: "mujer",
+    price: 30000,
+    image: "/imagenes/Millionarire-mujer.jpg",
+    notes:"Mandarina, Pimienta Rosa, Nardos, Jazmín, Vainilla, Haba Tonka Y Musgo",
+  },
+  {
+    id: 31,
+    name: "Bella-Leclat-100ml",
+    brand: "Paco Rabanne",
+    gender: "mujer",
+    price: 30000,
+    image: "/imagenes/Bella-Leclat-100ml.jpg",
+    notes:"Mandarina, Pimienta Rosa, Nardos, Jazmín, Vainilla, Haba Tonka Y Musgo",
+  },
+  {
+    id: 33,
+    name: "One Million",
+    brand: "Paco Rabanne",
+    gender: "hombre",
+    price: 30000,
+    image: "/imagenes/One-Million-Hombre.jpg",
+    notes:"Las Notas de Salida son mandarina roja, toronja (pomelo) y menta; las Notas de Corazón son canela, notas especiadas y rosa; las Notas de Fondo son ámbar, cuero, notas amaderadas y pachulí hindú.",
+  },
 ];
 
 
@@ -289,6 +357,31 @@ export default function PerfumeCatalog() {
   };
 
   return (
+    <div className="relative">
+    
+    <div className="absolute top-4 right-4 flex gap-4 z-50">
+      {/* Botón de WhatsApp */}
+      <Link
+        href="https://wa.me/1145630304" // Reemplaza con tu número de WhatsApp
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition"
+      >
+        <FaWhatsapp size={24} />
+      </Link>
+
+      {/* Botón de Instagram */}
+      <Link
+        href="https://www.instagram.com/dt_fragancias/" // Reemplaza con tu enlace de Instagram
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-full shadow-lg hover:opacity-90 transition"
+      >
+        <FaInstagram size={24} />
+      </Link>
+    </div>
+    
+   
     <div className="mx-auto p-5 h-full flex flex-col">
       <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
 
@@ -341,7 +434,7 @@ export default function PerfumeCatalog() {
               <span>${priceRange[1]}</span>
             </div>
           </div> 
-
+        
 
 
 
@@ -365,8 +458,8 @@ export default function PerfumeCatalog() {
               <Image
                 src={perfume.image}
                 alt={`Imagen de ${perfume.name}`}
-                width={200}
-                height={200}
+                width={300}
+                height={300}
                 className="w-full h-50 object-cover rounded-t-lg"
               />
             </CardHeader>
@@ -387,7 +480,7 @@ export default function PerfumeCatalog() {
               </Button>
               {/* MODAL */}
                 {isModalOpen && selectedPerfume && (
-                      <div className="modal-overlay fixed inset-0 bg-opacity-50 bg-opacity-50 flex items-center justify-center z-50">
+                      <div className="modal-overlay fixed inset-0 bg-opacity-50  flex items-center justify-center z-50">
                       <div className="modal bg-white rounded-lg p-6 shadow-lg max-w-md w-full text-center">
                         <h2 className="text-lg font-bold mb-4"><strong>{selectedPerfume.name}</strong></h2>
                         <p className="mb-4"><strong>Marca:</strong> {selectedPerfume.brand}</p>
@@ -411,6 +504,7 @@ export default function PerfumeCatalog() {
           No se encontraron perfumes que coincidan con tu búsqueda.
         </p>
       )}
+    </div>
     </div>
   );
 }
