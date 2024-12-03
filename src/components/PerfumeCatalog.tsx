@@ -266,7 +266,7 @@ const perfumes = [
     id: 27,
     name: "Scandal Le Parfum Intense",
     brand: "Jean Paul Gaultier",
-    gender: "Mujer",
+    gender: "mujer",
     price: 30000,
     image: "/imagenes/Scandal-Le-Parfum-Intense-mujer.jpg",
     notes:"Las Notas Olfativas son: Flor de Azahar, tuberosa y Jazmín.",
@@ -315,6 +315,24 @@ const perfumes = [
     price: 30000,
     image: "/imagenes/One-Million-Hombre.jpg",
     notes:"Las Notas de Salida son mandarina roja, toronja (pomelo) y menta; las Notas de Corazón son canela, notas especiadas y rosa; las Notas de Fondo son ámbar, cuero, notas amaderadas y pachulí hindú.",
+  },
+  {
+    id: 34,
+    name: "Badboy X 50Ml. -Jacques Ryon MEN",
+    brand: "Paco Rabanne",
+    gender: "hombre",
+    price: 12000,
+    image: "/imagenes/minis/Bad-boy50ml.jpg",
+    notes:"Las Notas son Cacao, Ambar, Salvia, Pimienta Negra Y Blanca, Bergamota ",
+  },
+  {
+    id: 35,
+    name: "Saulvag X 50Ml. - Jacques Ryon MEN",
+    brand: "Paco Rabanne",
+    gender: "hombre",
+    price: 12000,
+    image: "/imagenes/minis/sauvage-50ml.jpg",
+    notes:"Las Notas son Cacao, Ambar, Salvia, Pimienta Negra Y Blanca, Bergamota ",
   },
 ];
 
