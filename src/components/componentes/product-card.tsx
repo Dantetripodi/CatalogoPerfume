@@ -3,19 +3,19 @@
 
 //import { Button } from '@/ui/button'
 import { FavoritesButton } from './favorites-button'
-import type { Perfume as Product } from '@/types/product'
+import type { Perfume } from '@/types/product'
 
 interface ProductCardProps {
-  product: Product
+  perfumes: Perfume[]
   isFavorite: boolean
-  onToggleFavorite: (id: string) => void
+  onToggleFavorite: (id: number) => void
 }
 
-export function ProductCard({ product, isFavorite, onToggleFavorite }: ProductCardProps) {
+export function ProductCard({ perfumes , isFavorite, onToggleFavorite }: ProductCardProps) {
   return (
    <>
         <FavoritesButton
-            productId={product.id.toString()}
+            productId={perfumes[0].id}
             isFavorite={isFavorite}
             onToggleFavorite={onToggleFavorite}
           />  
