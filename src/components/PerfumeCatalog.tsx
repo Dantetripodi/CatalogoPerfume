@@ -1,33 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect} from "react";
+
+
+import { FavoritesMenu } from '@/components/componentes/favorites-menu'
+import { FavoritesButton } from '@/components/componentes/favorites-button'
+//import { ProductCard } from '@/components/componentes/product-card' 
+ 
+//import { ShoppingBag, X } from 'lucide-react'
+
 import  Image from "next/image";
 import { Input } from "@/ui/input";
 import { Button } from "@/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/ui/card";
+import {Card,CardContent,CardFooter,CardHeader,CardTitle,} from "@/ui/card";
 import { Slider } from "@/ui/slider";
 import { Label } from "@/ui/label"; 
 import { RadioGroup, RadioGroupItem } from "@/ui/radio-group";
 
-//import ContactButtons from "./ContactButtons";
 
-import Link from "next/link";
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
-interface Perfume {
-  name: string;
-  brand: string;
-  notes: string;
-}
+//import Link from "next/link";
+//import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { Perfume } from "@/types/product";
+import {Contacto} from "./componentes/Contacto";
 
 // Datos para los perfumes
-const perfumes = [
+const perfumes : Perfume[] = [
   {
     id: 1,
     name: "212-Men",
@@ -328,13 +327,34 @@ const perfumes = [
   {
     id: 35,
     name: "Saulvag X 50Ml. - Jacques Ryon MEN",
-    brand: "Paco Rabanne",
+    brand: "Christian Dior",
     gender: "hombre",
     price: 12000,
     image: "/imagenes/minis/sauvage-50ml.jpg",
     notes:"Las Notas son Cacao, Ambar, Salvia, Pimienta Negra Y Blanca, Bergamota ",
   },
-];
+  {
+    id: 36,
+    name: "Invicts X 50Ml. -Jacques Ryon MEN",
+    brand: "Paco Rabanne",
+    gender: "hombre",
+    price: 12000,
+    image: "/imagenes/minis/invictus-50ml.jpg",
+    notes:"Las Notas son Cítrico Fresco, Notas Marinas, Madera, Pimienta Rosa ",
+  },
+  {
+    id: 37,
+    name: "12Heroes Men X 50Ml. - Jacques Ryon MEN",
+    brand: "Carolina Herrera",
+    gender: "hombre",
+    price: 12000,
+    image: "/imagenes/minis/invictus-50ml.jpg",
+    notes:"Las Notas son Pera, Jengibre, Geranio, Salvia, Almizcle Y Cuero ",
+  },
+  // Agregar más productos aquí
+]
+
+
 
 
 export default function PerfumeCatalog() {
@@ -374,6 +394,35 @@ export default function PerfumeCatalog() {
     setGenderFilter(value);
   };
 
+  //MANEJO DE PERFUMES FAVORITOS
+ 
+  const [favorites, setFavorites] = useState<Perfume[]>([])
+
+  useEffect(() => {
+    // Cargar favoritos desde localStorage al montar el componente
+    const storedFavorites = localStorage.getItem('favorites')
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites))
+    }
+  }, [])
+
+  useEffect(() => {
+    // Guardar favoritos en localStorage cada vez que cambian
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
+
+  const addFavorite = (perfume: Perfume) => {
+    setFavorites((prevFavorites) => [...prevFavorites, perfume]);
+  };
+  
+
+
+  const removeFavorite = (perfumeId: number) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((favorite) => favorite.id !== perfumeId)
+    );
+  };
+
   return (
     <>
     {/* CONTENIDO PRINCIPAL */}
@@ -381,28 +430,16 @@ export default function PerfumeCatalog() {
     <div className=" p-10 h-full flex flex-col">
       <h1 className="text-4xl font-bold mb-7">Catálogo de Perfumes</h1>
 
-      {/* BOTONES DE CONTACTO */}
-    <div className="absolute  top-4 right-4 flex flex-col gap-3 sm:gap-4 z-50">
-      {/* Botón de WhatsApp */}
-      <Link
-        href="https://wa.me/1145630304" // Reemplaza con tu número de WhatsApp
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition"
-      >
-        <FaWhatsapp size={24} />
-      </Link>
 
-      {/* Botón de Instagram */}
-      <Link
-        href="https://www.instagram.com/dt_fragancias/" // Reemplaza con tu enlace de Instagram
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-full shadow-lg hover:opacity-90 transition"
-      >
-        <FaInstagram size={24} />
-      </Link>
-    </div>
+      {/* CARRITO DE FAVORITOS */}
+      <div className="absolute  top-18 right-20 flex flex-col gap-3 sm:gap-4 z-50">
+      <FavoritesMenu  
+      perfumes={favorites}
+      onRemoveFavorite={(id: number) => removeFavorite(id)}>
+      </FavoritesMenu>
+      </div>
+      
+    <Contacto/>
 
       <div className="mb-6 space-y-4">
         <Input
@@ -453,11 +490,7 @@ export default function PerfumeCatalog() {
               <span>${priceRange[1]}</span>
             </div>
           </div> 
-        
-
-
-
-        </div>
+       </div>
       </div>
 
       <div
@@ -489,14 +522,29 @@ export default function PerfumeCatalog() {
                 {perfume.gender}
               </p>
             </CardContent>
-            <CardFooter className="flex justify-between">
-              <span className="">${perfume.price}</span>
-              
-              <Button
-              className="btn btn-primary"
-              onClick={() => handleOpenModal(perfume)}>
-              Ver Detalles
-              </Button>
+
+          <CardFooter className="flex justify-between">
+            <div className="container">
+              <div className="flex p-5">
+              <span className="text-lg font-bold m-1">${perfume.price}</span>
+              {/* Favoritos */}
+                <FavoritesButton
+                  productId={perfume.id}
+                  isFavorite={favorites.some((favorite) => favorite.id === perfume.id)}
+                  onToggleFavorite={(perfumeId) =>
+                    favorites.some((favorite) => favorite.id === perfumeId)
+                      ? removeFavorite(perfumeId)
+                      : addFavorite(perfume)
+                  }/>
+                </div>
+              {/* VER DETALLES */}
+                <Button
+                className="btn btn-primary  items-center justify-center m-1"
+                onClick={() => handleOpenModal(perfume)}>
+                Ver Detalles
+                </Button>
+              </div>
+
               {/* MODAL */}
                 {isModalOpen && selectedPerfume && (
                       <div className="modal-overlay fixed inset-0 bg-opacity-50  flex items-center justify-center z-50">
