@@ -17,6 +17,8 @@ import { Badge } from "@/components/ui/badge"
 
 
 import type { Perfume  } from '@/types/product'
+import { CotizarButton } from './CotizarButton'
+
 
 interface FavoritesMenuProps {
   perfumes: Perfume[]
@@ -62,17 +64,23 @@ export function FavoritesMenu({ perfumes, onRemoveFavorite }: FavoritesMenuProps
                 onClick={() => onRemoveFavorite(product.id)}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </Button> 
+             
+                
             </div>
-          ))}
+           ))}
           {perfumes.length === 0 && (
             <p className="text-center text-muted-foreground py-4">
               No hay productos en favoritos
             </p>
           )}
-        </ScrollArea>
-      </SheetContent>
-    </Sheet>
-  )
+        </ScrollArea> 
+        <CotizarButton 
+          perfumes={[...perfumes]} // Pass the 	product
+          name={perfumes.name}
+          price={perfumes.price}/>
+    </SheetContent>
+</Sheet>
+)
 }
 

@@ -1,29 +1,34 @@
 import { Perfume } from "@/types/product";
 import React from "react";
+import { FaWhatsapp } from 'react-icons/fa'
+import Link from 'next/link'
+
 
 // Definimos la interfaz para los productos
-interface Props {
-    name: string;
-    price: number;
-}
+interface CotizarProps {
+  perfumes: Perfume[]
+  name: string;
+  price: number;
+}   
 
-const CotizarPedido: React.FC = () => {
+export function CotizarButton ({perfumes, name, price}: CotizarProps){
   // Lista de productos favoritos (puedes pasar esto como props o manejarlo desde el estado)
   const productosFavoritos: Perfume[] = [];
 
   // Función para generar el mensaje y abrir WhatsApp
-  const handleCotizar = ({name , price }: Props ) => {
+  const handleCotizar = (): void => {
     let mensaje = "¡Hola! Me gustaría cotizar el siguiente pedido:\n\n";
-    productosFavoritos.forEach((producto, index) => {
-      mensaje += `${index + 1}. ${producto.name} - $${producto.price}\n`;
+
+     productosFavoritos.forEach((perfumes, index) => {
+      mensaje += `${index + 1}. ${perfumes.name} - $${perfumes.price}\n`;
     });
-    mensaje += "\nQuedo atento a la información. ¡Gracias!";
+    mensaje += "\nQuedo atento a la información. ¡Gracias!"; 
 
     // Codificar el mensaje para URL
     const mensajeCodificado = encodeURIComponent(mensaje);
 
     // Número de WhatsApp en formato internacional sin "+"
-    const numeroWhatsApp: string = "1234567890"; // Ejemplo: 5491123456789
+    const numeroWhatsApp: string = "1545630304"; 
 
     // URL de WhatsApp con el mensaje
     const urlWhatsApp: string = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
@@ -32,23 +37,23 @@ const CotizarPedido: React.FC = () => {
     window.open(urlWhatsApp, "_blank");
   };
 
+
+
   return (
-    <button
-      onClick={handleCotizar}
-      style={{
-        padding: "10px",
-        backgroundColor: "#25D366",
-        color: "white",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-        marginTop: "10px",
-        fontSize: "16px",
-      }}
-    >
-      Cotizar Pedido
-    </button>
+    <>
+    <div className=" mt-4 flex flex-col  ">
+      {/* Botón de WhatsApp */}
+      <Link
+        onClick={handleCotizar}
+        href="https://wa.me/1545630304" // Reemplaza con tu número de WhatsApp
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition"
+      >
+        <FaWhatsapp size={24} />
+      </Link>
+    </div >
+    </>
   );
 };
 
-export default CotizarPedido;

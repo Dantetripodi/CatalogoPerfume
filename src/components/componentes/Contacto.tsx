@@ -10,7 +10,7 @@ export function Contacto() {
     <div className="absolute  top-4 left-20 flex flex-col gap-3 sm:gap-4 z-50">
       {/* Botón de WhatsApp */}
       <Link
-        href="https://wa.me/1145630304" // Reemplaza con tu número de WhatsApp
+        href="https://wa.me/1545630304" // Reemplaza con tu número de WhatsApp
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition"
