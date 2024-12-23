@@ -5,18 +5,43 @@ import Link from 'next/link'
 
 
 // Definimos la interfaz para los productos
+
 interface CotizarProps {
   perfumes: Perfume[]
-  name: string;
-  price: number;
-}   
 
-export function CotizarButton ({perfumes, name, price}: CotizarProps){
+}
+export function CotizarButton ({ perfumes}: CotizarProps){
   // Lista de productos favoritos (puedes pasar esto como props o manejarlo desde el estado)
-  const productosFavoritos: Perfume[] = [];
+  
+  // Generar mensaje dinámico
+   const generarMensajeWhatsApp = () => {
+    let mensaje = "¡Hola! Me gustaría cotizar el siguiente pedido:\n\n";
+
+     perfumes.forEach((perfumes, index) => {
+      mensaje += `${index + 1}. ${perfumes.name} - $${perfumes.price}\n`; 
+    });
+
+     mensaje += "\nQuedo atento a la información. ¡Gracias!"; 
+
+    // Codificar el mensaje para URL
+    const mensajeCodificado = encodeURIComponent(mensaje);
+
+    // Número de WhatsApp en formato internacional sin "+"
+    const numeroWhatsApp: string = "1545630304"; 
+
+    // URL de WhatsApp con el mensaje
+    const urlWhatsApp: string = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+
+    // Abrir la URL en una nueva pestaña
+    window.open(urlWhatsApp, "_blank");
+
+    /* return `https://wa.me/?text=${encodeURIComponent(
+      `¡Hola! Quisiera cotizar los siguientes productos:\n${mensaje}`
+    )}` */
+  };
 
   // Función para generar el mensaje y abrir WhatsApp
-  const handleCotizar = (): void => {
+  /* const handleCotizar = (): void => {
     let mensaje = "¡Hola! Me gustaría cotizar el siguiente pedido:\n\n";
 
      productosFavoritos.forEach((perfumes, index) => {
@@ -35,7 +60,7 @@ export function CotizarButton ({perfumes, name, price}: CotizarProps){
 
     // Abrir la URL en una nueva pestaña
     window.open(urlWhatsApp, "_blank");
-  };
+  }; */
 
 
 
@@ -44,7 +69,7 @@ export function CotizarButton ({perfumes, name, price}: CotizarProps){
     <div className=" mt-4 flex flex-col  ">
       {/* Botón de WhatsApp */}
       <Link
-        onClick={handleCotizar}
+        onClick={generarMensajeWhatsApp}
         href="https://wa.me/1545630304" // Reemplaza con tu número de WhatsApp
         target="_blank"
         rel="noopener noreferrer"

@@ -20,7 +20,7 @@ import type { Perfume  } from '@/types/product'
 import { CotizarButton } from './CotizarButton'
 
 
-interface FavoritesMenuProps {
+interface FavoritesMenuProps{  
   perfumes: Perfume[]
   onRemoveFavorite: (id: number) => void
 }
@@ -38,7 +38,7 @@ export function FavoritesMenu({ perfumes, onRemoveFavorite }: FavoritesMenuProps
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent>
+    <SheetContent>
         <SheetHeader>
           <SheetTitle>Mis Favoritos ({perfumes.length})</SheetTitle>
         </SheetHeader>
@@ -74,13 +74,12 @@ export function FavoritesMenu({ perfumes, onRemoveFavorite }: FavoritesMenuProps
               No hay productos en favoritos
             </p>
           )}
-        </ScrollArea> 
-        <CotizarButton 
-          perfumes={[...perfumes]} // Pass the 	product
-          name={perfumes.name}
-          price={perfumes.price}/>
+        <CotizarButton
+          perfumes={perfumes}
+          />
+      </ScrollArea> 
     </SheetContent>
-</Sheet>
+  </Sheet>
 )
 }
 
